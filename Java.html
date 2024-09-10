@@ -35,8 +35,99 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-   
-</style>
+    /* CSS for sticky header and search bar */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the header stays on top of other content */
+}
+
+.search-bar {
+    position: sticky;
+    top: 90px; /* Adjust based on header height */
+    background-color: #ebd98c; /* Matches the background to make sure it looks consistent */
+    z-index: 999; /* Ensures it stays below the header but above other content */
+    padding: 20px;
+}
+
+/* Optional: Add a box shadow to the search bar to make it stand out */
+.search-bar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+    background-color: #0056b3;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-body code {
+    display: block;
+}
+
+.btn-copy {
+    background-color: #17a2b8;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-copy:hover {
+    background-color: #139296;
+    transform: scale(1.05);
+}
+.highlight {
+    background-color: yellow;
+    color: black;
+    padding: 0 4px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+
+  </style>
 
 </head>
 
@@ -96,96 +187,36 @@
     <!-- Copy Code -->
     <div class="container mt-5">
       <!-- Navigation Buttons -->
-      <div class="nav-buttons mb-4">
-          <h4>Jump to Code</h4>
-          <button class="btn btn-primary" onclick="scrollToSection('sdlcCode')">SDLC</button>
-          <button class="btn btn-primary" onclick="scrollToSection('autoSeleniumCode')">Auto Selenium</button>
-          <button class="btn btn-primary" onclick="scrollToSection('manualTestingCode')">Manual Testing</button>
-          <button class="btn btn-primary" onclick="scrollToSection('functionalTestingCode')">Functional Testing</button>
-          <button class="btn btn-primary" onclick="scrollToSection('integrationTestingCode')">Integration Testing</button>
-      </div>
-
-      <section>
-          <div class="container mt-5">
-
-              <!-- Code Sections -->
-              <div class="card code-card">
-                  <h5 class="section-heading">SDLC Code</h5>
-                  <div class="card-body">
-                      <p>This section contains SDLC code examples.</p>
-                      <button class="btn btn-secondary copy-btn" onclick="copyCode('sdlcCode')">Copy SDLC Code</button>
-                      <pre id="sdlcCode">
-                          <code>
-                              &lt;div class="container"&gt;
-                                  &lt;div class="row"&gt;
-                                      &lt;div class="col"&gt;Column 1&lt;/div&gt;
-                                      &lt;div class="col"&gt;Column 2&lt;/div&gt;
-                                  &lt;/div&gt;
-                              &lt;/div&gt;
-                          </code>
-                      </pre>
-                  </div>
-              </div>
-
-              <div class="card code-card">
-                  <h5 class="section-heading">Auto Selenium Code</h5>
-                  <div class="card-body">
-                      <p>This section contains Auto Selenium code examples.</p>
-                      <button class="btn btn-secondary copy-btn" onclick="copyCode('autoSeleniumCode')">Copy Auto Selenium Code</button>
-                      <pre id="autoSeleniumCode">
-                          <code>
-                              // Auto Selenium code example
-                              &lt;script&gt;
-                                  // Your JavaScript code here
-                              &lt;/script&gt;
-                          </code>
-                      </pre>
-                  </div>
-              </div>
-
-              <div class="card code-card">
-                  <h5 class="section-heading">Manual Testing Code</h5>
-                  <div class="card-body">
-                      <p>This section contains Manual Testing code examples.</p>
-                      <button class="btn btn-secondary copy-btn" onclick="copyCode('manualTestingCode')">Copy Manual Testing Code</button>
-                      <pre id="manualTestingCode">
-                          <code>
-                              // Manual Testing code example
-                              &lt;!-- Your HTML code here --&gt;
-                          </code>
-                      </pre>
-                  </div>
-              </div>
-
-              <div class="card code-card">
-                  <h5 class="section-heading">Functional Testing Code</h5>
-                  <div class="card-body">
-                      <p>This section contains Functional Testing code examples.</p>
-                      <button class="btn btn-secondary copy-btn" onclick="copyCode('functionalTestingCode')">Copy Functional Testing Code</button>
-                      <pre id="functionalTestingCode">
-                          <code>
-                              // Functional Testing code example
-                              &lt;div&gt;Functional Testing&lt;/div&gt;
-                          </code>
-                      </pre>
-                  </div>
-              </div>
-
-              <div class="card code-card">
-                  <h5 class="section-heading">Integration Testing Code</h5>
-                  <div class="card-body">
-                      <p>This section contains Integration Testing code examples.</p>
-                      <button class="btn btn-secondary copy-btn" onclick="copyCode('integrationTestingCode')">Copy Integration Testing Code</button>
-                      <pre id="integrationTestingCode">
-                          <code>
-                              // Integration Testing code example
-                              &lt;div&gt;Integration Testing&lt;/div&gt;
-                          </code>
-                      </pre>
-                  </div>
-              </div>
-          </div>
-      </section>
+      <header class="bg-primary text-white text-center py-3">
+        <h1>SQL</h1>
+    </header>
+        <!-- Search Bar -->
+        <div class="search-bar mb-4">
+            <div class="input-group">
+                <input type="text" id="searchInput" class="form-control" placeholder="Search blog posts...">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" onclick="searchPosts()">Search</button>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Card 1 -->
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>Introduction to Procedural Programming</span>
+                <button class="btn btn-info btn-sm" onclick="copyToClipboard('code1')">Copy Code</button>
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    Concept: Code is executed in a sequence; functions are called in order.
+                </p>
+                <pre id="code1"><code>function greet(name) {
+    return "Hello, " + name;
+  }
+  console.log(greet("Alice")); // Outputs: Hello, Alice</code></pre>
+            </div>
+        </div>
+  
   </div>
 
  <!-- End Copy Code -->
@@ -211,11 +242,11 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <script src="assets/vendor/glightbox/js/codecopy.js"></script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <script src="assets/js/codecopy.js"></script>
  
 
 </body>
