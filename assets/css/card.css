@@ -1,0 +1,96 @@
+/* Sticky Header */
+.headers {
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures the header stays on top of other content */
+    background-color: #ffffff; /* Optional: Add a background color to avoid transparency issues */
+    border-bottom: 1px solid #ddd; /* Optional: Add a border for separation */
+}
+
+/* Sticky Search Bar */
+.search-bar {
+    position: sticky;
+    top: 80px; /* Adjusted for spacing below the header */
+    background-color: #ebd98c;
+    z-index: 999; /* Ensures it stays below the header but above other content */
+    padding: 15px; /* Slightly reduced padding for a more compact look */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd; /* Optional: Add a border for separation */
+}
+
+/* Card Styling */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Header Styling */
+.card-header {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.card-header:hover {
+    background-color: #0056b3;
+}
+
+/* Card Body Styling */
+.card-body {
+    padding: 20px;
+}
+
+.card-body pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.card-body code {
+    display: block;
+}
+
+/* Copy Button Styling */
+.btn-copy {
+    background-color: #17a2b8;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-copy:hover {
+    background-color: #139296;
+    transform: scale(1.05);
+}
+
+/* Highlight Styling */
+.highlight {
+    background-color: yellow;
+    color: black;
+    padding: 0 4px;
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
